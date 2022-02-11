@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ispyagentdvr</Name>
+  <Repository>doitandbedone/ispyagentdvr</Repository>
+  <Registry>https://hub.docker.com/r/doitandbedone/ispyagentdvr/</Registry>
+  <Network>proxy-net</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/doitandbedone/ispyagentdvr/</Support>
+  <Project/>
+  <Overview>iSpy's Agent DVR, a standalone DVR service to manage IP cameras.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:8090]</WebUI>
+  <TemplateURL/>
+  <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1600595200</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>iSpy's Agent DVR, a standalone DVR service to manage IP cameras.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>proxy-net</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3478</HostPort>
+        <ContainerPort>3478</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8096</HostPort>
+        <ContainerPort>8090</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ispyagentdvr/config</HostDir>
+      <ContainerDir>/agent/Media/XML/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/backup/video/</HostDir>
+      <ContainerDir>/agent/Media/WebServerRoot/Media/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="port1" Target="3478" Default="" Mode="udp" Description="Container Port: 3478" Type="Port" Display="always" Required="false" Mask="false">3478</Config>
+  <Config Name="port2" Target="8090" Default="" Mode="tcp" Description="Container Port: 8090" Type="Port" Display="always" Required="false" Mask="false">8096</Config>
+  <Config Name="config" Target="/agent/Media/XML/" Default="" Mode="rw" Description="Container Path: /agent/Media/XML/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ispyagentdvr/config</Config>
+  <Config Name="Video" Target="/agent/Media/WebServerRoot/Media/" Default="" Mode="rw" Description="Container Path: /agent/Media/WebServerRoot/Media/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/backup/video/</Config>
+</Container>
